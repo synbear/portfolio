@@ -49,51 +49,111 @@ const Approach = () => {
   )
 }
 
-const Card = ({
-  title,
-  icon,
-  children,
-  description,
-}: {
+const Card: React.FC<{
   title: string;
   icon: React.ReactNode;
   children?: React.ReactNode;
   description?: string;
-}) => {
+}> = ({ title, icon, children, description }) => {
   const [hovered, setHovered] = React.useState(false);
+  const rootRef = React.useRef<HTMLDivElement | null>(null);
+
+  React.useEffect(() => {
+    const node = rootRef.current;
+    if (!node) return;
+
+    // Capture pointerdown so parent toggles before children consume it (works across mobile browsers)
+    const onPointerDownCapture = (ev: PointerEvent) => {
+      if (ev.pointerType === "touch") {
+        setHovered((s) => !s);
+      }
+    };
+
+    // Close when tapping outside (touch only)
+    const onDocPointerDown = (ev: PointerEvent) => {
+      if (ev.pointerType !== "touch") return;
+      if (!node.contains(ev.target as Node)) setHovered(false);
+    };
+
+    node.addEventListener("pointerdown", onPointerDownCapture, { capture: true });
+    document.addEventListener("pointerdown", onDocPointerDown, { capture: true });
+
+    return () => {
+      node.removeEventListener("pointerdown", onPointerDownCapture, { capture: true } as any);
+      document.removeEventListener("pointerdown", onDocPointerDown, { capture: true } as any);
+    };
+  }, []);
+
   return (
     <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2]  max-w-sm w-full mx-auto p-4 lg:h-[35rem] relative rounded-3xl"
+      ref={rootRef}
+      // mouse hover for desktop
+      onPointerEnter={(e) => e.pointerType === "mouse" && setHovered(true)}
+      onPointerLeave={(e) => e.pointerType === "mouse" && setHovered(false)}
+      // keep layout identical to your previous card wrapper
+      className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2] max-w-sm w-full mx-auto p-4 lg:h-[35rem] relative rounded-3xl overflow-hidden"
+      style={{
+        touchAction: "manipulation", // help mobile taps register consistently
+        WebkitTapHighlightColor: "transparent",
+      }}
     >
-      <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
- 
+      {/* corner icons / decorative (keep on top) */}
+      <div className="absolute -top-3 -left-3 z-[60]">{/* wrapper controls stacking */}</div>
+      <div className="absolute -bottom-3 -left-3 z-[60]"></div>
+      <div className="absolute -top-3 -right-3 z-[60]"></div>
+      <div className="absolute -bottom-3 -right-3 z-[60]"></div>
+
+      {/* Reveal/animation layer (children) - forced below content */}
       <AnimatePresence>
         {hovered && (
           <motion.div
+            key="reveal"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="h-full w-full absolute inset-0"
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.28 }}
+            className="absolute inset-0 z-[20] pointer-events-none"
+            style={{
+              transform: "translateZ(0)",
+              willChange: "opacity",
+            }}
           >
             {children}
           </motion.div>
         )}
       </AnimatePresence>
- 
-      <div className="relative z-20">
-        <div className="text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] group-hover/canvas-card:opacity-0 transition duration-200 w-full  mx-auto flex items-center justify-center">
+
+      {/* Content layer - button + title + description (must be above reveal) */}
+      <div className="py-5 relative z-[40] w-full h-full flex flex-col items-center justify-center text-center px-4">
+        {/* Centered Phase button / icon */}
+        <div
+          className={`flex items-center justify-center transition-all duration-300 ${
+            hovered ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
+          }`}
+          aria-hidden={hovered}
+        >
+          {/* Keep the same icon element you pass in; it will be centered */}
           {icon}
         </div>
-        <h2 className="dark:text-white text-3xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center">
+
+        {/* Title - uses hovered state so it appears on touch */}
+        <h2
+          className={`mt-3 font-bold text-2xl text-center transition-all duration-300 ${
+            hovered ? "opacity-100 translate-y-0 text-white" : "opacity-0 -translate-y-1 text-black"
+          }`}
+        >
           {title}
         </h2>
-        <h2 className="dark:text-white text-sm opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center" style={{ color:'#e4ecff' }}>
+
+        {/* Description - slightly reduced top spacing */}
+        <p
+          className={`mt-2 text-sm text-center transition-all duration-300 ${
+            hovered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"
+          }`}
+          style={{ color: "#e4ecff", maxWidth: "85%" }}
+        >
           {description}
-        </h2>
+        </p>
       </div>
     </div>
   );
