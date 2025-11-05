@@ -1,8 +1,11 @@
-import {withSentryConfig} from "@sentry/nextjs";
+import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Enable static HTML export (replaces `next export`)
+  output: "export",
+
+  // Optional: if you’re using experimental React compiler
   reactCompiler: true,
 };
 
