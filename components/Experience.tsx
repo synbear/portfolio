@@ -11,24 +11,28 @@ const Experience = () => {
       </h1>
       <div className='w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10'>
         {workExperience.map((card) => (
-        <Button
+          <Button
             key={card.id}
             duration={3000 + Math.floor(Math.random() * 4000)}
             borderRadius='1.75rem'
-            className='flex-1 text-white border-neutral-200 dark:border-slate-800 p-5'
-        >
-            <div className='flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2'>
-                <img src={card.thumbnail} alt={card.thumbnail} className='lg:w-32 md:w-20 w-16'/>
+            className='flex flex-col lg:flex-row items-center text-white border-neutral-200 dark:border-slate-800 p-5'
+          >
+            <div className='flex-shrink-0 flex justify-center lg:justify-start'>
+              <img
+                src={card.thumbnail}
+                alt={card.title}
+                className='lg:w-24 md:w-20 w-16'
+              />
             </div>
-            <div className='lg:ms-5'>
-                <h1 className='text-start text-xl md:text-2xl font-bold'>
-                    {card.title}
-                </h1>
-                <p className='text-start text-white-100 mt-3 font-semibold'>
-                    {card.desc}
-                </p>
+            <div className='flex-1 lg:ms-5 mt-4 lg:mt-0'>
+              <h1 className='text-start text-xl md:text-2xl font-bold'>
+                {card.title}
+              </h1>
+              <p className='text-start text-white-100 mt-3 font-semibold'>
+                {card.desc}
+              </p>
             </div>
-        </Button>
+          </Button>
         ))}
       </div>
     </div>

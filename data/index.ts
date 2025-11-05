@@ -107,33 +107,27 @@ export const projects = [
 export const testimonials = [
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Samuel Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Ahmed’s creativity and attention to detail transformed our vision into a compelling digital experience. His approach to design and development is both strategic and refined, making collaboration effortless and results-driven. Highly recommended for anyone seeking a true professional.",
+    name: "Maarij",
+    title: "Director of Pluto Media",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Ahmed demonstrated outstanding leadership while guiding our team through a complex project. His ability to coordinate effectively, provide direction, and maintain high standards of quality was impressive. The final product reflected not only technical excellence but also his ability to bring people together toward a common goal.",
+    name: "Muhammad",
+    title: "CEO of Financial Regulation Courses",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Jonah Fill",
-    title: "Director of AlphaStream Technologies",
+      "Our partnership with Ahmed was a turning point for our digital presence. He approached every stage with precision and clarity, ensuring that both design and performance met modern standards. His professionalism and technical insight set him apart from others we’ve worked with.",
+    name: "Kamran",
+    title: "CEO of DigitalSphere360",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Nathan Scott",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Andrew Harcourt",
-    title: "Director of AlphaStream Technologies",
+      "Ahmed’s technical expertise and clear communication were instrumental in delivering a polished, reliable solution for our systems. His structured workflow and commitment to excellence reflected a deep understanding of both technology and business needs.",
+    name: "Nicholas",
+    title: "CFO of Oracle Power",
   },
 ];
 
@@ -173,29 +167,29 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    title: "Tech Lead / Full Stack Developer — Financial Regulation Courses (UK)",
+    desc: "Spearheaded the modernization of the FRC website by migrating the frontend to React.js, boosting performance and user experience by 40%. Built and maintained a scalable LAMP stack with optimized PHP APIs, improving reliability by 25%. Directed a remote cross-functional team to meet all project milestones, increasing team productivity by 50%. Implemented CI/CD pipelines on AWS EC2 with load balancing, cutting server response time by 60%.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-    className: "md:col-span-2", // change to md:col-span-2
+    title: "Software Engineer — Oliv (under Linkstar, Dubai)",
+    desc: "Developed responsive, user-focused web interfaces using Next.js, leading to a 25% improvement in user retention. Enhanced back-end performance through PHP and API optimization, achieving a 35% speed gain. Conducted in-depth security testing, resolving 30+ vulnerabilities and ensuring full compliance with industry standards. Mentored interns, fostering skill growth and boosting team efficiency by 30%.",
+    className: "md:col-span-2",
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-    className: "md:col-span-2", // change to md:col-span-2
+    title: "Software Engineer — Linkstar (Karachi, Pakistan)",
+    desc: "Collaborated with the frontend lead to troubleshoot and enhance Next.js and Node.js applications, improving overall UX by 40%. Optimized backend performance and fixed critical bugs, improving system stability by 25%. Implemented performance enhancements that reduced page load times by 30% and introduced structured testing procedures that cut post-deployment issues by half.",
+    className: "md:col-span-2",
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    title: "Freelance Full Stack Developer — Self-Employed",
+    desc: "Delivered more than 30 professional websites and web applications for international clients, spanning industries from education to media and e-commerce. Specialized in building custom WordPress stacks, Shopify stores, and modern React.js/Next.js applications with seamless API integrations. Developed secure payment systems, optimized SEO and performance, and provided long-term maintenance support — achieving a 100% project delivery rate and strong client retention.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
