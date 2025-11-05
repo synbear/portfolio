@@ -25,9 +25,14 @@ const year = new Date().getFullYear();
         <p className=' pt-15 md:text-base text-sm md:font-normal font-light text-center md:text-left'>Copyright © {year} synbear</p>
         <div className='pt-5 flex items-center md:gap-3 gap-6 justify-center md:justify-start'>
         {socialMedia.map((profile =>
-            <div key={profile.id} className='w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300'>
+            <a 
+            key={profile.id}
+            href={profile.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className='w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300'>
                 <img src={profile.img} alt={String(profile.id)} width={20} height={20} />
-            </div>
+            </a>
         ))}
         </div>
     </div>
