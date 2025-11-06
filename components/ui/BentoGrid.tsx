@@ -54,8 +54,11 @@ export const BentoGridItem = ({
   const [copied, setCopied] = useState(false)
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('ahmedbukhari.uni@gmail.com');
-    setCopied(true);
+  navigator.clipboard.writeText('ahmedbukhari.uni@gmail.com');
+  setCopied(true);
+
+  // Reset copied state after 5 seconds
+  setTimeout(() => setCopied(false), 5000);
   }
   
   return (
@@ -125,26 +128,31 @@ export const BentoGridItem = ({
             </div>
         )}
         {id === 6 && (
-            <div className="mt-5 md:-mt-3 relative flex flex-col items-center justify-center text-center">
-                <div className={`absolute -bottom-5 right-0`}>
-                <Lottie options={{
-                    loop: copied,
-                    autoplay: copied,
-                    animationData,
-                    rendererSettings: {
-                        preserveAspectRatio: 'xMidYMid slice'
-                    }
-                }} />
-                </div>
-                <MagicButton 
-                title={copied ? 'Email copied' : 'Copy my email'}
-                icon={<IoCopyOutline />}
-                position="left"
-                otherClasses="!bg-[#161a31]"
-                handleClick={handleCopy}
-                />
-            </div>
+    <div className="mt-5 md:-mt-3 relative flex flex-col items-center justify-center text-center">
+      <div className={`absolute -bottom-5 right-0`}>
+        {copied && (
+          <Lottie
+            key={Date.now()} // force remount on every copy
+            options={{
+            loop: false, // play only once
+            autoplay: true, // start immediately
+            animationData,
+            rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+            }
+            }}
+          />
         )}
+      </div>
+      <MagicButton 
+        title={copied ? 'Email copied' : 'Copy my email'}
+        icon={<IoCopyOutline />}
+        position="left"
+        otherClasses="!bg-[#161a31]"
+        handleClick={handleCopy}
+      />
+    </div>
+    )}
     </div>
     </div>
   );

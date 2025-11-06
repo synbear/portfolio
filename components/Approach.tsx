@@ -16,15 +16,6 @@ const Approach = () => {
           icon={<AceternityIcon order="Phase 1"/>}
           description="We will collaborate to map out your website's goals, target audience, and key functionalities. We will discuss site structure, navigation, and content requirements.">
           <CanvasRevealEffect
-            animationSpeed={5.1}
-            containerClassName="bg-emerald-900"
-          />
-        </Card>
-        <Card 
-          title="Development & Progress Update" 
-          icon={<AceternityIcon order="Phase 2"/>}
-          description="Once we agree on the plan, I cue my lofi playlist and dive into coding. From initial sketches to polished code, keeping you updated every step of the way.">
-          <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-black"
             colors={[
@@ -35,13 +26,27 @@ const Approach = () => {
           />
         </Card>
         <Card 
+          title="Development & Progress Update" 
+          icon={<AceternityIcon order="Phase 2"/>}
+          description="Once we agree on the plan, I cue my lofi playlist and dive into coding. From initial sketches to polished code, keeping you updated every step of the way.">
+          <CanvasRevealEffect
+            animationSpeed={3}
+            containerClassName="bg-sky-600"
+            colors={[[125, 211, 252]]}
+          />
+        </Card>
+        <Card 
           title="Development & Launch" 
           icon={<AceternityIcon order="Phase 3"/>}
           description="This is where the magic happens! Based on the approved design, I'll translate everything into functional code, building your website from the ground up.">
           <CanvasRevealEffect
             animationSpeed={3}
-            containerClassName="bg-sky-600"
-            colors={[[125, 211, 252]]}
+            containerClassName="bg-black"
+            colors={[
+              [236, 72, 153],
+              [232, 121, 249],
+            ]}
+            dotSize={2}
           />
         </Card>
       </div>
@@ -142,7 +147,7 @@ const Card: React.FC<{
 
         {/* Description */}
         <p
-          className={`mt-2 text-sm text-center transition-all duration-300 ${
+          className={`lg:pt-5 mt-2 text-base font-semibold text-center transition-all duration-300 ${
             hovered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"
           }`}
           style={{ color: "#e4ecff", maxWidth: "85%" }}
