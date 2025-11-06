@@ -38,7 +38,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "Tech enthusiast with a passion for development.",
+    title: "Tech enthusiast with a passion for development",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -135,22 +135,22 @@ export const companies = [
   {
     id: 1,
     name: 'Next.js',
-    img: '/nextjs.svg',
+    img: '/nextjs.svg?1000',
   },
   {
     id: 2,
     name: 'Tailwind CSS',
-    img: '/tailwindcss.svg',
+    img: '/tailwindcss.svg?1000',
   },
   {
     id: 3,
     name: 'Sentry',
-    img: '/sentry.svg',
+    img: '/sentry.svg?1000',
   },
   {
     id: 4,
     name: 'Cloudflare',
-    img: '/cloudflare.svg',
+    img: '/cloudflare.svg?1000',
   },
 ];
 
