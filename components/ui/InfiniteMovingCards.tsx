@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
 
 export const InfiniteMovingCards = ({
@@ -17,42 +17,70 @@ export const InfiniteMovingCards = ({
   pauseOnHover?: boolean;
   className?: string;
 }) => {
-  const scrollX = useMotionValue(0);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const baseX = useMotionValue(0);
+  const scrollerRef = useRef<HTMLUListElement>(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [contentWidth, setContentWidth] = useState(0);
 
-  // Auto scroll speed
-  const scrollSpeed = speed === "fast" ? 0.8 : speed === "normal" ? 0.4 : 0.2;
   const scrollDir = direction === "left" ? -1 : 1;
+  const scrollSpeed = speed === "fast" ? 1.2 : speed === "normal" ? 0.9 : 0.7;
 
-  // Auto animation loop
-  useAnimationFrame((t, delta) => {
-    if (!isDragging) {
-      const move = (delta / 10) * scrollSpeed * scrollDir;
-      scrollX.set(scrollX.get() + move);
+  // Measure width
+  useEffect(() => {
+    if (scrollerRef.current) {
+      const totalWidth = scrollerRef.current.scrollWidth / 3; // since items repeated 3x
+      setContentWidth(totalWidth);
+    }
+  }, [items]);
+
+  // Auto-scroll
+  useAnimationFrame((_, delta) => {
+    if (!isDragging && contentWidth > 0) {
+      let move = (delta / 10) * scrollSpeed * scrollDir;
+      let newX = baseX.get() + move;
+
+      // Wrap seamlessly in both directions
+      if (newX <= -contentWidth) newX += contentWidth;
+      if (newX >= 0) newX -= contentWidth;
+
+      baseX.set(newX);
     }
   });
 
+  // Drag handling
+  const handleDrag = (_: any, info: any) => {
+    let newX = baseX.get() + info.delta.x;
+
+    // Seamless wrap for manual drag in both directions
+    if (newX <= -contentWidth) newX += contentWidth;
+    if (newX >= 0) newX -= contentWidth;
+
+    baseX.set(newX);
+  };
+
   return (
     <div
-      ref={containerRef}
       className={cn(
         "relative overflow-hidden w-screen cursor-grab active:cursor-grabbing [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
     >
       <motion.ul
+        ref={scrollerRef}
+        style={{ x: baseX }}
         drag="x"
-        dragConstraints={{ left: -Infinity, right: Infinity }}
-        style={{ x: scrollX }}
+        dragElastic={0.05}
+        dragMomentum={false}
         onDragStart={() => setIsDragging(true)}
         onDragEnd={() => setIsDragging(false)}
+        onDrag={handleDrag}
         className={cn(
-          "flex gap-16 py-6 w-max min-w-full shrink-0 flex-nowrap",
+          "flex gap-16 py-6 w-max flex-nowrap",
           pauseOnHover && "pause-on-hover"
         )}
       >
-        {[...items, ...items].map((item, idx) => (
+        {/* Duplicate items 3× for continuous loop */}
+        {[...items, ...items, ...items].map((item, idx) => (
           <li
             key={idx}
             className="relative w-[90vw] md:w-[60vw] shrink-0 rounded-2xl border border-zinc-700/40 px-8 py-10"
