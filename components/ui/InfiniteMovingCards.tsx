@@ -58,6 +58,7 @@ export const InfiniteMovingCards = ({
     baseX.set(newX);
   };
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   return (
     <div
       className={cn(
@@ -65,20 +66,22 @@ export const InfiniteMovingCards = ({
         className
       )}
     >
-      <motion.ul
-        ref={scrollerRef}
-        style={{ x: baseX }}
-        drag="x"
-        dragElastic={0.05}
-        dragMomentum={false}
-        onDragStart={() => setIsDragging(true)}
-        onDragEnd={() => setIsDragging(false)}
-        onDrag={handleDrag}
-        className={cn(
-          "flex gap-16 py-6 w-max flex-nowrap",
-          pauseOnHover && "pause-on-hover"
-        )}
-      >
+
+
+    <motion.ul
+      ref={scrollerRef}
+      style={{ x: baseX }}
+      drag="x"
+      dragElastic={isMobile ? 0.2 : 0.05}
+      dragMomentum={isMobile}
+      onDragStart={() => setIsDragging(true)}
+      onDragEnd={() => setIsDragging(false)}
+      onDrag={handleDrag}
+      className={cn(
+        "flex gap-16 py-6 w-max flex-nowrap",
+        pauseOnHover && "pause-on-hover"
+      )}
+    >
         {/* Duplicate items 3× for continuous loop */}
         {[...items, ...items, ...items].map((item, idx) => (
           <li
