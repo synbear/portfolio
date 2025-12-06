@@ -80,11 +80,11 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Linkst.ar",
-    des: "A modern link landing platform for freelancers and influencers. Developed using Next.js and Node.js for performance and scalability.",
-    img: "/linkstar.png",
+    title: "Queue HQ",
+    des: "A streamlined queue and approval management platform built for modern workflows. Developed using Next.js and Node.js for performance and scalability.",
+    img: "/theqhq.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://linkst.ar",
+    link: "https://theqhq.com",
   },
   {
     id: 3,
