@@ -88,19 +88,19 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Oliv.com",
-    des: "An AI-driven career platform connecting students and graduates. Built with Next.js and Node.js for fast, responsive, and dynamic user experiences.",
-    img: "/oliv.png",
+    title: "Global Raffles",
+    des: "A full-stack e-commerce prize draw platform where users purchase entries for fixed-date raffles featuring premium rewards. Built with a modern tech stack, delivering secure transactions, real-time draw management, and a transparent winner selection system.",
+    img: "/global-raffles.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://oliv.com",
+    link: "https://global-raffles.com",
   },
   {
     id: 4,
-    title: "ATS Resume Analyzer",
-    des: "Enterprise-ready AI resume analyzer that provides actionable hiring insights. Built with React, React Router, and Puter.js, delivering real-time analysis and an interactive UI.",
-    img: "/synAI.png",
+    title: "Asaan Solution",
+    des: "A full-stack e-commerce store for professional-grade solar panel cleaning equipment. Features a dynamic product catalog with telescopic brushes and accessories, seamless checkout, and a tailored shopping experience for the Pakistani market.",
+    img: "/asaan-solutions.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://ats.synbear.com",
+    link: "https://asaansolution.com",
   },
 ];
 
