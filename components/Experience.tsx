@@ -28,6 +28,11 @@ const Experience = () => {
               <h1 className='text-start text-xl md:text-2xl font-bold'>
                 {card.title}
               </h1>
+              {card.date && (
+                <p className='text-start text-purple-300 text-sm mt-1 font-medium'>
+                  {card.date}
+                </p>
+              )}
               <p className='text-start text-white-100 mt-3 font-semibold'>
                 {card.desc}
               </p>

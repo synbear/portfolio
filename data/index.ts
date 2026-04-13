@@ -158,6 +158,7 @@ export const workExperience = [
   {
     id: 1,
     title: "Tech Lead / Full Stack Developer — Financial Regulation Courses (UK)",
+    date: "April 2024 – Present",
     desc: "Spearheaded the modernization of the FRC website by migrating the frontend to React.js, boosting performance and user experience by 40%. Built and maintained a scalable LAMP stack with optimized PHP APIs, improving reliability by 25%. Directed a remote cross-functional team to meet all project milestones, increasing team productivity by 50%. Implemented CI/CD pipelines on AWS EC2 with load balancing, cutting server response time by 60%.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
@@ -165,6 +166,7 @@ export const workExperience = [
   {
     id: 2,
     title: "Software Engineer — Oliv (under Linkstar, Dubai)",
+    date: "April 2023 – February 2024",
     desc: "Developed responsive, user-focused web interfaces using Next.js, leading to a 25% improvement in user retention. Enhanced back-end performance through PHP and API optimization, achieving a 35% speed gain. Conducted in-depth security testing, resolving 30+ vulnerabilities and ensuring full compliance with industry standards. Mentored interns, fostering skill growth and boosting team efficiency by 30%.",
     className: "md:col-span-2",
     thumbnail: "/exp2.svg",
@@ -172,6 +174,7 @@ export const workExperience = [
   {
     id: 3,
     title: "Software Engineer — Linkstar (Karachi, Pakistan)",
+    date: "September 2022 – February 2024",
     desc: "Collaborated with the frontend lead to troubleshoot and enhance Next.js and Node.js applications, improving overall UX by 40%. Optimized backend performance and fixed critical bugs, improving system stability by 25%. Implemented performance enhancements that reduced page load times by 30% and introduced structured testing procedures that cut post-deployment issues by half.",
     className: "md:col-span-2",
     thumbnail: "/exp3.svg",
@@ -179,6 +182,7 @@ export const workExperience = [
   {
     id: 4,
     title: "Freelance Full Stack Developer — Self-Employed",
+    date: "January 2022 – Present",
     desc: "Delivered more than 30 professional websites and web applications for international clients, spanning industries from education to media and e-commerce. Specialized in building custom WordPress stacks, Shopify stores, and modern React.js/Next.js applications with seamless API integrations. Developed secure payment systems, optimized SEO and performance, and provided long-term maintenance support — achieving a 100% project delivery rate and strong client retention.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
