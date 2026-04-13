@@ -72,11 +72,11 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "Financial Regulation Courses",
-    des: "A professional platform for financial education, offering CPD-certified courses. Built on ReactJS and LAMP stack (Linux, Apache, MySQL, PHP) for stability and scalability.",
-    img: "/frc.png",
+    title: "Pacific Engineering & Automation",
+    des: "A full-stack web platform for a trusted provider of power engineering, automation, and control systems since 1995. Built with Next.js and Express.js, featuring dynamic product catalogs, asset management solutions, and partner integrations.",
+    img: "/pacificpk.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://financialregulationcourses.com",
+    link: "https://pacificpk.com",
   },
   {
     id: 2,
