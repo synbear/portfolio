@@ -18,7 +18,7 @@ const RecentProjects = () => {
             className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-[570px] w-[80vw]'
           >
             <PinContainer title={link} href={link}>
-              {index === 0 || index === projects.length - 1 ? (
+              {index === projects.length - 1 ? (
                 <InfiniteScrollImage img={img} /> // infinite repeating scroll
               ) : (
                 <SingleScrollImage img={img} /> // normal scroll
