@@ -17,9 +17,7 @@ export const TextGenerateEffect = ({
   tag?: "div" | "h1" | "h2" | "h3";
 }) => {
   const [scope, animate] = useAnimate();
-  const Tag = tag;
   let wordsArray = words.split(" ");
-  // ... (keeping existing useEffect)
   useEffect(() => {
     animate(
       "span",
