@@ -16,20 +16,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://synbear.com"),
   title: "Ahmed Bukhari | Full Stack Developer & Designer",
-  description: "Explore the portfolio of Ahmed Bukhari, a Full Stack Developer specializing in building modern, minimalist, and high-performance web applications with Next.js and Tailwind CSS.",
+  description: "Modern & Minimalist Portfolio - built with Nextjs",
   alternates: {
     canonical: "/",
   },
   robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+    index: false,
+    follow: false,
   },
   icons: {
     icon: [
@@ -42,7 +35,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Ahmed Bukhari | Full Stack Developer & Designer",
-    description: "Modern & Minimalist Portfolio - Explore high-performance web applications built with Next.js.",
+    description: "Modern & Minimalist Portfolio - built with Nextjs",
     url: "https://synbear.com",
     siteName: "Ahmed Bukhari Portfolio",
     locale: "en_US",
@@ -59,8 +52,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ahmed Bukhari | Full Stack Developer & Designer",
-    description: "Modern & Minimalist Portfolio - Explore high-performance web applications built with Next.js.",
-    creator: "@synbear", // Assuming this is the handle
+    description: "Modern & Minimalist Portfolio - built with Nextjs",
+    creator: "@synbear",
     images: ["/synbear.png"],
   },
   category: "technology",
