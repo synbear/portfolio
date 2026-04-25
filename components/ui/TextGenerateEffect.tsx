@@ -8,14 +8,18 @@ export const TextGenerateEffect = ({
   className,
   filter = true,
   duration = 0.5,
+  tag: Tag = "div",
 }: {
   words: string;
   className?: string;
   filter?: boolean;
   duration?: number;
+  tag?: "div" | "h1" | "h2" | "h3";
 }) => {
   const [scope, animate] = useAnimate();
+  const Tag = tag;
   let wordsArray = words.split(" ");
+  // ... (keeping existing useEffect)
   useEffect(() => {
     animate(
       "span",
@@ -32,7 +36,7 @@ export const TextGenerateEffect = ({
 
   const renderWords = () => {
     return (
-      <motion.div ref={scope}>
+      <motion.span ref={scope}>
         {wordsArray.map((word, idx) => {
           return (
             <motion.span
@@ -46,17 +50,17 @@ export const TextGenerateEffect = ({
             </motion.span>
           );
         })}
-      </motion.div>
+      </motion.span>
     );
   };
 
   return (
-    <div className={cn("font-bold", className)}>
+    <Tag className={cn("font-bold", className)}>
       <div className="my-4">
         <div className="text-white leading-snug tracking-wide">
           {renderWords()}
         </div>
       </div>
-    </div>
+    </Tag>
   );
 };

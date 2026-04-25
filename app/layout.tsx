@@ -14,26 +14,61 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ahmed Bukhari's Portfolio",
-  description: "Modern & Minimalist Portfolio - built with Nextjs",
+  metadataBase: new URL("https://synbear.com"),
+  title: "Ahmed Bukhari | Full Stack Developer & Designer",
+  description: "Explore the portfolio of Ahmed Bukhari, a Full Stack Developer specializing in building modern, minimalist, and high-performance web applications with Next.js and Tailwind CSS.",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
-    icon: "/synbear.png",
-    apple: "/synbear.png",
+    icon: [
+      { url: "/synbear.png" },
+      { url: "/synbear.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/synbear.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   openGraph: {
+    title: "Ahmed Bukhari | Full Stack Developer & Designer",
+    description: "Modern & Minimalist Portfolio - Explore high-performance web applications built with Next.js.",
+    url: "https://synbear.com",
+    siteName: "Ahmed Bukhari Portfolio",
+    locale: "en_US",
+    type: "website",
     images: [
       {
         url: "/synbear.png",
-        width: 2048,
-        height: 2048,
-        alt: "Synbear",
+        width: 1200,
+        height: 1200,
+        alt: "Ahmed Bukhari - Synbear",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
+    title: "Ahmed Bukhari | Full Stack Developer & Designer",
+    description: "Modern & Minimalist Portfolio - Explore high-performance web applications built with Next.js.",
+    creator: "@synbear", // Assuming this is the handle
     images: ["/synbear.png"],
   },
+  category: "technology",
+  manifest: "/site.webmanifest",
+};
+
+export const viewport = {
+  themeColor: "#000319",
 };
 
 export default function RootLayout({
@@ -51,6 +86,28 @@ export default function RootLayout({
             }
           });
         `}} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Ahmed Bukhari",
+              "url": "https://synbear.com",
+              "image": "https://synbear.com/synbear.png",
+              "sameAs": [
+                "https://github.com/synbear",
+                "https://twitter.com/synbear"
+              ],
+              "jobTitle": "Full Stack Developer",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Freelance"
+              },
+              "description": "Ahmed Bukhari is a Full Stack Developer specializing in building modern, minimalist, and high-performance web applications."
+            })
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

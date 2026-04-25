@@ -31,7 +31,11 @@ const Hero = () => {
             <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
               Next-Level Web Experiences
             </h2>
-            <TextGenerateEffect className="text-center text-[40px] md:text-5xl lg:text-6xl" words="Transforming Code into Immersive Digital Worlds"/>
+            <TextGenerateEffect 
+              tag="h1"
+              className="text-center text-[40px] md:text-5xl lg:text-6xl" 
+              words="Transforming Code into Immersive Digital Worlds"
+            />
             <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
               Hi, I&apos;m Ahmed Bukhari, a full-stack developer based in Pakistan.
             </p>

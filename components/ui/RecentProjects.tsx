@@ -8,9 +8,10 @@ import { FaLocationArrow } from 'react-icons/fa'
 const RecentProjects = () => {
   return (
     <div className='py-20' id='projects'>
-      <h1 className='heading'>
-        A collection of <span className='text-purple-300'>recent projects</span>
-      </h1>
+      <h2 className='heading'>
+        A small selection of {' '}
+        <span className='text-purple-300'>recent projects</span>
+      </h2>
       <div className='flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10'>
         {projects.map(({ id, title, des, img, iconLists, link }, index) => (
           <div
@@ -24,9 +25,9 @@ const RecentProjects = () => {
                 <SingleScrollImage img={img} /> // normal scroll
               )}
 
-              <h1 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1 mt-4'>
+              <h3 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1 mt-4'>
                 {title}
-              </h1>
+              </h3>
               <p className='lg:text-xl lg:font-normal font-light text-sm line-clamp-3'>
                 {des}
               </p>

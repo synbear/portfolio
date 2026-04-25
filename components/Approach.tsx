@@ -7,9 +7,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 const Approach = () => {
   return (
     <section className='w-full py-20'>
-      <h1 className='heading'>
-        My <span className='text-purple-300'>approach</span>
-      </h1>
+      <h2 className='heading'>
+        My <span className="text-purple-300">Approach</span>
+      </h2>
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center gap-4">
         <Card 
           title="Planning and Strategy" 

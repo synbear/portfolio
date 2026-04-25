@@ -1,0 +1,20 @@
+{
+  "name": "Ahmed Bukhari Portfolio",
+  "short_name": "Ahmed Portfolio",
+  "icons": [
+    {
+      "src": "/synbear.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/synbear.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000319",
+  "background_color": "#000319",
+  "display": "standalone",
+  "start_url": "/"
+}

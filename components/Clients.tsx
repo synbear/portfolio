@@ -5,9 +5,9 @@ import { companies, testimonials } from '@/data'
 const Clients = () => {
   return (
     <div className="py-20" id="testimonials">
-      <h1 className="heading">
+      <h2 className="heading">
         Kind words from <span className="text-purple-300">satisfied clients</span>
-      </h1>
+      </h2>
 
       <div className="flex flex-col items-center md:mt-10">
         <InfiniteMovingCards
@@ -19,9 +19,9 @@ const Clients = () => {
         />
 
         {/* Powered by text */}
-        <h1 className="py-20 heading">
-          This portfolio website is <span className="text-purple-300">powered by</span>
-        </h1>
+        <h2 className="py-20 heading">
+          Technology <span className="text-purple-300">Stack</span>
+        </h2>
 
         {/* Companies / Powered by logos */}
         <div className="flex flex-wrap items-center justify-center gap-6 mt-4">
