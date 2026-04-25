@@ -16,6 +16,24 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ahmed Bukhari's Portfolio",
   description: "Modern & Minimalist Portfolio - built with Nextjs",
+  icons: {
+    icon: "/synbear.png",
+    apple: "/synbear.png",
+  },
+  openGraph: {
+    images: [
+      {
+        url: "/synbear.png",
+        width: 2048,
+        height: 2048,
+        alt: "Synbear",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/synbear.png"],
+  },
 };
 
 export default function RootLayout({
