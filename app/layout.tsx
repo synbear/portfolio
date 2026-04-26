@@ -26,11 +26,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/synbear-logo.png" },
-      { url: "/synbear-logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/synbear_logo.png" },
+      { url: "/synbear_logo.png", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: "/synbear-logo.png", sizes: "180x180", type: "image/png" },
+      { url: "/synbear_logo.png", sizes: "180x180", type: "image/png" },
     ],
   },
   openGraph: {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/synbear-logo.png",
+        url: "/synbear_logo.png",
         width: 1200,
         height: 1200,
         alt: "Ahmed Bukhari - Synbear",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Ahmed Bukhari | Full Stack Developer & Designer",
     description: "Modern & Minimalist Portfolio - built with Nextjs",
     creator: "@synbear",
-    images: ["/synbear-logo.png"],
+    images: ["/synbear_logo.png"],
   },
   category: "technology",
   manifest: "/site.webmanifest",
@@ -87,7 +87,7 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Ahmed Bukhari",
               "url": "https://synbear.com",
-              "image": "https://synbear.com/synbear-logo.png",
+              "image": "https://synbear.com/synbear_logo.png",
               "sameAs": [
                 "https://github.com/synbear",
                 "https://twitter.com/synbear"
